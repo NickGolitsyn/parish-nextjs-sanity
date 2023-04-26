@@ -23,7 +23,7 @@ export default defineConfig({
   name: "default",
   title: "Stablo Template",
   basePath: "/studio",
-  projectId: projectId,
+  projectId: projectId || "que4q559",  
   dataset: dataset,
 
   plugins: [
