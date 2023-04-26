@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
 import {
+  MapPinIcon,
   EnvelopeIcon,
   PhoneIcon
 } from "@heroicons/react/24/outline";
@@ -57,11 +58,19 @@ export default function Contact({ settings }) {
             Contact Us
           </h2>
           <p className="max-w-sm mt-5">
-            Have something to say? We are here to help. Fill up the
-            form or send email or call phone.
+            Have something to say? Fill in the
+            form, send email or call us.
           </p>
 
           <div className="mt-5">
+            {settings?.address && (
+              <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
+                <MapPinIcon className="w-4 h-4" />
+                <a href={`http://google.com/maps/place/${settings.address}`} target="_blank">
+                  {settings.address}
+                </a>
+              </div>
+            )}
             {settings?.email && (
               <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
                 <EnvelopeIcon className="w-4 h-4" />

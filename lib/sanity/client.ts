@@ -13,7 +13,8 @@ import {
   catpathquery,
   catquery,
   getAll,
-  searchquery
+  searchquery,
+  servicesQuery
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -55,6 +56,13 @@ export async function getAllPosts() {
 export async function getSettings() {
   if (client) {
     return (await client.fetch(configQuery)) || [];
+  }
+  return [];
+}
+
+export async function getServices() {
+  if (client) {
+    return (await client.fetch(servicesQuery)) || [];
   }
   return [];
 }

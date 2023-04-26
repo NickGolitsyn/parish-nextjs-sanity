@@ -20,16 +20,24 @@ export default function Navbar(props) {
       label: "About",
       href: "/#about"
     },
-  ];
-
-  const rightmenu = [
     {
       label: "Contact",
       href: "/#contact"
     },
+  ];
+
+  const rightmenu = [
     {
-      label: "Archive",
-      href: "/archive"
+      label: "Services",
+      href: "/services"
+    },
+    {
+      label: "Gallery",
+      href: "/gallery"
+    },
+    {
+      label: "Donate",
+      href: "/donate"
     }
   ];
 
@@ -89,7 +97,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        Parish
                       </span>
                     )}
                   </Link>
