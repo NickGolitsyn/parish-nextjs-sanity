@@ -1,45 +1,91 @@
 import Container from "@/components/container";
-import { urlForImage } from "@/lib/sanity/image";
-import Image from "next/image";
-import Link from "next/link";
-import { formatDateStrings } from '../../../utils/dateFormat'
+import { parseISO, format } from "date-fns";
+import React from "react";
 
 export default function Service({ authors, settings, services }) {
 
-  // const myDateArray = [
-  //   { myDate: '2023-04-16', serviceDescription: 'Easter', _key: '6a508b013a4a' },
-  //   { myDate: '2023-04-23', serviceDescription: "Sunday's Service @ 9 am", _key: '4d0b2e8b1c55' }
-  // ];
-  // const formattedDateArray = formatDateStrings(myDateArray);
+
+  function sortDatesAscending(arr) {
+    return arr.sort((a, b) => new Date(a.myDate) - new Date(b.myDate));
+  }
+
+  const sortedArray = sortDatesAscending(services.servicelist);
+
+
   return (
     <Container>
-      {/* <h1 id="about" className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
-        About Our Parish
+      <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
+        Services
       </h1>
-      <div className="text-center">
-        <p className="text-lg">We are a parish in Norfolk.</p>
-      </div>
 
-      <div className="mx-auto prose text-center dark:prose-invert mt-14">
-        <p>{settings?.about || `About our parish.`}</p>
-        <p>
-          <Link href="#contact">Get in touch</Link>
-        </p>
+      {/* <div className="grid grid-cols-[24ch_auto] gap-4">
+        <p>Date</p>
+        <p>Description</p>
+        
+        {services?.servicelist.map((e) =>
+          <React.Fragment key={e._key}>
+            <time
+              dateTime={e.myDate}>
+                {format(
+                  parseISO(e.myDate),
+                  "MMMM dd, yyyy"
+                )}
+            </time>
+            <p>{e.serviceDescription}</p>
+          </React.Fragment>
+        )}
       </div> */}
-      {/* <div>
-        {formattedDateArray.map(item => (
-          <div key={item._key}>
-            <p>Date: {item.myDate}</p>
-            <p>Description: {item.serviceDescription}</p>
-          </div>
-        ))}
-      </div> */}
-      <div>{services?.servicelist.map((e) =>
-        <div key={e._key}>
-          <h1>{e.myDate}</h1>
-          <h1>{e.serviceDescription}</h1>
-        </div>
-      )}</div>
+      {/* <table className="border-separate border-spacing-y-2"> */}
+      <table>
+        {/* <caption>Testing</caption> */}
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+        {sortedArray.map((e) =>
+          // <tr className="border-y border-white" key={e._key}>
+          <tr key={e._key}>
+            <td className="w-3/12 p-3">
+              <time
+                dateTime={e.myDate}>
+                {format(
+                  parseISO(e.myDate),
+                  "MMMM dd, yyyy"
+                )}
+              </time>  
+            </td>
+            <td className="w-9/12 p-3">{e.serviceDescription}</td>
+          </tr>
+        )}
+        </tbody>
+      </table>
+      {/* <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+        {sortDatesAscending?.map((e) =>
+          <tr key={e._key}>
+            <td>
+              <time
+                dateTime={e.myDate}>
+                {format(
+                  parseISO(e.myDate),
+                  "MMMM dd, yyyy"
+                )}
+              </time>  
+            </td>
+            <td>{e.serviceDescription}</td>
+          </tr>
+        )}
+        </tbody>
+      </table> */}
     </Container>
   );
 }

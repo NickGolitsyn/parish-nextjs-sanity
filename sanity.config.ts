@@ -22,7 +22,7 @@ console.log(projectId);
 
 export default defineConfig({
   name: "default",
-  title: "Stablo Template",
+  title: "Parish Website Studio",
   basePath: "/studio",
   projectId: projectId || "que4q559",  
   dataset: dataset,

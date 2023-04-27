@@ -48,16 +48,13 @@ export default function Contact({ settings }) {
       <h1 id="contact" className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
         Contact
       </h1>
-      <div className="text-center">
-        <p className="text-lg">We are a here to help.</p>
-      </div>
 
       <div className="grid my-10 md:grid-cols-2">
         <div className="my-10">
           <h2 className="text-2xl font-semibold dark:text-white">
             Contact Us
           </h2>
-          <p className="max-w-sm mt-5">
+          <p className="max-w-sm mt-5 dark:text-white">
             Have something to say? Fill in the
             form, send email or call us.
           </p>
@@ -171,7 +168,7 @@ export default function Contact({ settings }) {
 
             <button
               type="submit"
-              className="w-full py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 dark:bg-white dark:text-black ">
+              className="w-full py-4 font-semibold text-white transition-colors !bg-gray-900 rounded-md hover:!bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 dark:!bg-white dark:text-black ">
               {isSubmitting ? (
                 <svg
                   className="w-5 h-5 mx-auto text-white dark:text-black animate-spin"

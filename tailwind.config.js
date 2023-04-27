@@ -11,7 +11,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gray: colors.neutral
+        gray: colors.neutral,
+        // 'golden': '#f4deb3',
+        'golden': '#fbf0da',
+        'red': '#611414'
       },
       fontFamily: {
         // to change, update font in _document.js

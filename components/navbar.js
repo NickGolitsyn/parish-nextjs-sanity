@@ -37,7 +37,8 @@ export default function Navbar(props) {
     },
     {
       label: "Donate",
-      href: "/donate"
+      href: "https://www.paypal.com/paypalme/nickgolitsyn",
+      external: true
     }
   ];
 
@@ -76,6 +77,7 @@ export default function Navbar(props) {
                   <Link href="/" className="w-28 dark:hidden">
                     {props.logo ? (
                       <Image
+                        className="rounded-lg"
                         {...urlForImage(props.logo)}
                         alt="Logo"
                         priority={true}
@@ -90,6 +92,7 @@ export default function Navbar(props) {
                   <Link href="/" className="hidden w-28 dark:block">
                     {props.logoalt ? (
                       <Image
+                        className="rounded-lg"
                         {...urlForImage(props.logoalt)}
                         alt="Logo"
                         priority={true}
