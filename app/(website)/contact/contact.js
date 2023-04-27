@@ -46,24 +46,17 @@ export default function Contact({ settings }) {
   return (
     <Container>
       <h1 id="contact" className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
-        Contact
+        Contact Us
       </h1>
 
       <div className="grid my-10 md:grid-cols-2">
         <div className="my-10">
-          <h2 className="text-2xl font-semibold dark:text-white">
-            Contact Us
-          </h2>
-          <p className="max-w-sm mt-5 dark:text-white">
-            Have something to say? Fill in the
-            form, send email or call us.
-          </p>
 
           <div className="mt-5">
             {settings?.address && (
               <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
                 <MapPinIcon className="w-4 h-4" />
-                <a href={`http://google.com/maps/place/${settings.address}`} target="_blank">
+                <a href={`${settings.map}`} target="_blank">
                   {settings.address}
                 </a>
               </div>

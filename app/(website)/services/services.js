@@ -27,9 +27,6 @@ export default function Service({ services, filtered }) {
 
   return (
     <Container>
-      <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">
-        Services
-      </h1>
       {/* <table className="border-separate border-spacing-y-2"> */}
       <table>
         {/* <caption>Testing</caption> */}
@@ -48,7 +45,7 @@ export default function Service({ services, filtered }) {
                 dateTime={e.myDate}>
                 {format(
                   parseISO(e.myDate),
-                  "MMMM dd, yyyy"
+                  "EEEE, MMMM dd, yyyy"
                 )}
               </time>  
             </td>

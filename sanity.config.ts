@@ -18,7 +18,13 @@ import { codeInput } from "@sanity/code-input";
 import services from "./lib/sanity/schemas/services";
 
 export const PREVIEWABLE_DOCUMENT_TYPES: string[] = ["post"];
-console.log(projectId);
+
+const supportedLanguages = [
+  { id: 'en', title: 'English', isDefault: true },
+  { id: 'ro', title: 'Romanian' },
+]
+
+const baseLanguage = supportedLanguages.find(l => l.isDefault)
 
 export default defineConfig({
   name: "default",

@@ -4,12 +4,16 @@ import post from './post'
 import author from './author'
 import settings from './settings'
 import services from './services'
+import article from './article'
+import localeString from './localeString'
 
 export const schemaTypes = [
-  // post, 
-  // author, 
-  // category, 
+  post,
+  author, 
+  category, 
   settings,
   services,
-  // blockContent
+  // article,
+  // localeString,
+  blockContent
 ]
