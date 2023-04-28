@@ -31,7 +31,7 @@ export default function Post(props) {
       <Container className="!pt-0">
         <div className="mx-auto max-w-screen-md ">
           <div className="flex justify-center">
-            <CategoryLabel categories={post.categories} />
+            {/* <CategoryLabel categories={post.categories} /> */}
           </div>
 
           <h1 className="text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug">
@@ -40,7 +40,7 @@ export default function Post(props) {
 
           <div className="mt-3 flex justify-center space-x-3 text-gray-500 ">
             <div className="flex items-center gap-3">
-              <div className="relative h-10 w-10 flex-shrink-0">
+              {/* <div className="relative h-10 w-10 flex-shrink-0">
                 {AuthorimageProps && (
                   <Link href={`/author/${post.author.slug.current}`}>
                     <Image
@@ -52,13 +52,13 @@ export default function Post(props) {
                     />
                   </Link>
                 )}
-              </div>
+              </div> */}
               <div>
-                <p className="text-gray-800 dark:text-gray-400">
+                {/* <p className="text-gray-800 dark:text-gray-400">
                   <Link href={`/author/${post.author.slug.current}`}>
                     {post.author.name}
                   </Link>
-                </p>
+                </p> */}
                 <div className="flex items-center space-x-2 text-sm">
                   <time
                     className="text-gray-500 dark:text-gray-400"
@@ -68,7 +68,6 @@ export default function Post(props) {
                       "MMMM dd, yyyy"
                     )}
                   </time>
-                  <span>· {post.estReadingTime || "5"} min read</span>
                 </div>
               </div>
             </div>
@@ -96,12 +95,12 @@ export default function Post(props) {
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link
-              href="/"
+              href="/sunday-school"
               className="bg-brand-secondary/20 rounded-full px-5 py-2 text-sm text-blue-600 dark:text-blue-500 ">
               ← View all posts
             </Link>
           </div>
-          {post.author && <AuthorCard author={post.author} />}
+          {/* {post.author && <AuthorCard author={post.author} />} */}
         </article>
       </Container>
     </>

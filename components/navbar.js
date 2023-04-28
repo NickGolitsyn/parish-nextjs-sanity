@@ -24,12 +24,16 @@ export default function Navbar(props) {
       label: "Contact",
       href: "/#contact"
     },
+    {
+      label: "Services",
+      href: "/services"
+    },
   ];
 
   const rightmenu = [
     {
-      label: "Services",
-      href: "/services"
+      label: "Sunday School",
+      href: "/sunday-school"
     },
     {
       label: "Gallery",
@@ -39,7 +43,18 @@ export default function Navbar(props) {
       label: "Donate",
       href: "https://www.paypal.com/paypalme/nickgolitsyn",
       external: true
-    }
+    },
+    {
+      label: "Archive",
+      children: [{
+        title: "Services",
+        path: "/archive/services"
+      },
+      {
+        title: "Activities",
+        path: "/archive/activities"
+      },] 
+    },
   ];
 
   const mobilemenu = [...leftmenu, ...rightmenu];

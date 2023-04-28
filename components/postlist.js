@@ -18,9 +18,9 @@ export default function PostList({
   const imageProps = post?.mainImage
     ? urlForImage(post.mainImage)
     : null;
-  const AuthorimageProps = post?.author?.image
-    ? urlForImage(post.author.image)
-    : null;
+  // const AuthorimageProps = post?.author?.image
+  //   ? urlForImage(post.author.image)
+  //   : null;
   return (
     <>
       <div
@@ -41,7 +41,7 @@ export default function PostList({
                 ? "aspect-[5/4]"
                 : "aspect-square"
             )}
-            href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${
+            href={`/sunday-school/${pathPrefix ? `${pathPrefix}/` : ""}${
               post.slug.current
             }`}>
             {imageProps ? (
@@ -67,10 +67,10 @@ export default function PostList({
 
         <div className={cx(minimal && "flex items-center")}>
           <div>
-            <CategoryLabel
+            {/* <CategoryLabel
               categories={post.categories}
               nomargin={minimal}
-            />
+            /> */}
             <h2
               className={cx(
                 fontSize === "large"
@@ -84,7 +84,7 @@ export default function PostList({
                 "mt-2    dark:text-white"
               )}>
               <Link
-                href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${
+                href={`/sunday-school/${pathPrefix ? `${pathPrefix}/` : ""}${
                   post.slug.current
                 }`}>
                 <span
@@ -104,7 +104,7 @@ export default function PostList({
               {post.excerpt && (
                 <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
                   <Link
-                    href={`/post/${
+                    href={`/sunday-school/${
                       pathPrefix ? `${pathPrefix}/` : ""
                     }${post.slug.current}`}
                     legacyBehavior>
@@ -115,7 +115,7 @@ export default function PostList({
             </div>
 
             <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
-              <Link
+              {/* <Link
                 href={`/author/${post.author.slug.current}`}
                 legacyBehavior>
                 <div className="flex items-center gap-3">
@@ -134,10 +134,10 @@ export default function PostList({
                     {post.author.name}
                   </span>
                 </div>
-              </Link>
-              <span className="text-xs text-gray-300 dark:text-gray-600">
+              </Link> */}
+              {/* <span className="text-xs text-gray-300 dark:text-gray-600">
                 &bull;
-              </span>
+              </span> */}
               <time
                 className="truncate text-sm"
                 dateTime={post?.publishedAt || post._createdAt}>

@@ -9,8 +9,8 @@ import localeString from './localeString'
 
 export const schemaTypes = [
   post,
-  author, 
-  category, 
+  // author, 
+  // category, 
   settings,
   services,
   // article,
