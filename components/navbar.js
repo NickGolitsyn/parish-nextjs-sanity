@@ -45,7 +45,7 @@ export default function Navbar(props) {
   const mobilemenu = [...leftmenu, ...rightmenu];
 
   return (
-    <Container>
+    <div className="py-5 lg:py-8 bg-amber-500">
       <nav>
         <Disclosure>
           {({ open }) => (
@@ -185,7 +185,7 @@ export default function Navbar(props) {
           )}
         </Disclosure>
       </nav>
-    </Container>
+    </div>
   );
 }
 

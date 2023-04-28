@@ -2,10 +2,8 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/sanity/image";
 
 export default function CoverImage({ settings }) {
-  console.log(settings.openGraphImage);
-  console.log(settings.openGraphImage?.src);
   return (
-    <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
+    <div className="relative z-0 mx-auto aspect-[16/10] max-w-screen-lg overflow-hidden lg:rounded-lg">
         {settings.about && (
           <Image
             {...urlForImage(settings.openGraphImage)}
