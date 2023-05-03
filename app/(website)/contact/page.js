@@ -1,9 +1,9 @@
-import { getSettings } from "@/lib/sanity/client";
+import { getContact } from "@/lib/sanity/client";
 import Contact from "./contact";
 
 export default async function ContactPage() {
-  const settings = await getSettings();
-  return <Contact settings={settings} />;
+  const contact = await getContact();
+  return <Contact contact={contact} />;
 }
 
-// export const revalidate = 60;
+export const revalidate = 60;

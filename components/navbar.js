@@ -18,7 +18,14 @@ export default function Navbar(props) {
     },
     {
       label: "About",
-      href: "/about"
+      children: [{
+        title: "About our parish",
+        path: "/about"
+      },
+      {
+        title: "About our saints",
+        path: "/about/saints"
+      }] 
     },
     {
       label: "Contact",
@@ -53,7 +60,7 @@ export default function Navbar(props) {
       {
         title: "Activities",
         path: "/archive/activities"
-      },] 
+      }] 
     },
   ];
 

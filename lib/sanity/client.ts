@@ -14,7 +14,10 @@ import {
   catquery,
   getAll,
   searchquery,
-  servicesQuery
+  servicesQuery,
+  activitiesQuery,
+  aboutQuery,
+  contactQuery
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -60,9 +63,30 @@ export async function getSettings() {
   return [];
 }
 
+export async function getAbout() {
+  if (client) {
+    return (await client.fetch(contactQuery)) || [];
+  }
+  return [];
+}
+
+export async function getContact() {
+  if (client) {
+    return (await client.fetch(contactQuery)) || [];
+  }
+  return [];
+}
+
 export async function getServices() {
   if (client) {
     return (await client.fetch(servicesQuery)) || [];
+  }
+  return [];
+}
+
+export async function getActivities() {
+  if (client) {
+    return (await client.fetch(activitiesQuery)) || [];
   }
   return [];
 }

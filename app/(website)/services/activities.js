@@ -3,7 +3,7 @@ import { parseISO, format } from "date-fns";
 import React from "react";
 import sortDatesAscending from "@/utils/sortDate";
 
-export default function Service({ services, filtered }) {
+export default function Activities({ activities, filtered }) {
 
   const today = new Date();
   const yesterday = new Date(today);
@@ -13,14 +13,14 @@ export default function Service({ services, filtered }) {
   function filterItemsByDate(arr) {
     if (filtered) {
       return arr.filter(item => {
-        const itemDate = new Date(item.serviceDate);
+        const itemDate = new Date(item.activityDate);
         return itemDate >= yesterday;
       });
     }
     return arr;
   }
   
-  const sortedArray = sortDatesAscending(services.servicelist, true);
+  const sortedArray = sortDatesAscending(activities.activitylist, false);
   
   const filteredArray = filterItemsByDate(sortedArray);
 
@@ -42,14 +42,14 @@ export default function Service({ services, filtered }) {
           <tr key={e._key}>
             <td className="w-3/12 p-3">
               <time
-                dateTime={e.serviceDate}>
+                dateTime={e.activityDate}>
                 {format(
-                  parseISO(e.serviceDate),
+                  parseISO(e.activityDate),
                   "EEEE, MMMM dd, yyyy"
                 )}
               </time>  
             </td>
-            <td className="w-9/12 p-3">{e.serviceDescription}</td>
+            <td className="w-9/12 p-3">{e.activityDescription}</td>
           </tr>
         )}
         </tbody>

@@ -9,7 +9,7 @@ import {
   EnvelopeIcon,
   PhoneIcon
 } from "@heroicons/react/24/outline";
-export default function Contact({ settings }) {
+export default function Contact({ contact }) {
   const {
     register,
     handleSubmit,
@@ -24,7 +24,7 @@ export default function Contact({ settings }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [message, setMessage] = useState(false);
   // Please update the Access Key in the Sanity CMS - Site Congig Page
-  const apiKey = settings?.w3ckey || "YOUR_ACCESS_KEY_HERE";
+  const apiKey = contact?.w3ckey || "YOUR_ACCESS_KEY_HERE";
 
   const { submit: onSubmit } = useWeb3Forms({
     access_key: apiKey,
@@ -51,28 +51,32 @@ export default function Contact({ settings }) {
 
       <div className="grid my-10 md:grid-cols-2">
         <div className="my-10">
-
+          {contact?.contactText && (
+            <p className="max-w-sm mt-5">
+              {contact.contactText}
+            </p>
+          )}
           <div className="mt-5">
-            {settings?.address && (
+            {contact?.address && (
               <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
                 <MapPinIcon className="w-4 h-4" />
-                <a href={`${settings.map}`} target="_blank">
-                  {settings.address}
+                <a href={`${contact.map}`} target="_blank">
+                  {contact.address}
                 </a>
               </div>
             )}
-            {settings?.email && (
+            {contact?.email && (
               <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
                 <EnvelopeIcon className="w-4 h-4" />
-                <a href={`mailto:${settings.email}`}>
-                  {settings.email}
+                <a href={`mailto:${contact.email}`}>
+                  {contact.email}
                 </a>
               </div>
             )}
-            {settings?.phone && (
+            {contact?.phone && (
               <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
                 <PhoneIcon className="w-4 h-4" />
-                <a href={`tel:${settings.phone}`}>{settings.phone}</a>
+                <a href={`tel:${contact.phone}`}>{contact.phone}</a>
               </div>
             )}
           </div>
