@@ -19,6 +19,7 @@ import services from "./lib/sanity/schemas/services";
 import activities from "./lib/sanity/schemas/activities";
 import about from "./lib/sanity/schemas/about";
 import contact from "./lib/sanity/schemas/contact";
+import slideshow from "./lib/sanity/schemas/slideshow";
 
 export const PREVIEWABLE_DOCUMENT_TYPES: string[] = ["post"];
 
@@ -38,11 +39,11 @@ export default defineConfig({
 
   plugins: [
     deskTool({
-      structure: pageStructure([settings, about, contact, services, activities])
+      structure: pageStructure([settings, about, contact, slideshow, services, activities])
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       // defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
     }),
-    singletonPlugin(["settings", "about", "contact", "services", "activities"]),
+    singletonPlugin(["settings", "about", "contact", "slideshow", "services", "activities"]),
     visionTool(),
     unsplashImageAsset(),
     table(),

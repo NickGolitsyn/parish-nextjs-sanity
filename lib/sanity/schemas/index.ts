@@ -9,6 +9,7 @@ import localeString from './localeString'
 import activities from './activities'
 import about from './about'
 import contact from './contact'
+import slideshow from './slideshow'
 
 export const schemaTypes = [
   post,
@@ -17,6 +18,7 @@ export const schemaTypes = [
   settings,
   about,
   contact,
+  slideshow,
   services,
   activities,
   // article,

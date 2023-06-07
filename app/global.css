@@ -20,3 +20,7 @@ tr:nth-child(odd) {
 tbody > tr:hover {
   background-color: #b0a899;
 }
+
+.align-last-justify {
+  text-align-last: justify;
+}

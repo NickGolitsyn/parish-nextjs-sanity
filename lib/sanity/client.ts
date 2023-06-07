@@ -17,7 +17,8 @@ import {
   servicesQuery,
   activitiesQuery,
   aboutQuery,
-  contactQuery
+  contactQuery,
+  slideshowQuery
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -73,6 +74,13 @@ export async function getAbout() {
 export async function getContact() {
   if (client) {
     return (await client.fetch(contactQuery)) || [];
+  }
+  return [];
+}
+
+export async function getSlideshow() {
+  if (client) {
+    return (await client.fetch(slideshowQuery)) || [];
   }
   return [];
 }
