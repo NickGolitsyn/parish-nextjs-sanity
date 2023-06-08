@@ -60,7 +60,7 @@ export default function Contact({ contact }) {
             {contact?.address && (
               <div className="flex items-center mt-2 space-x-2 text-dark-600 dark:text-gray-400">
                 <MapPinIcon className="w-4 h-4" />
-                <a href={`${contact.map}`} target="_blank">
+                <a href={`${contact.map}`} target="_blank" rel="noopener noreferrer">
                   {contact.address}
                 </a>
               </div>
