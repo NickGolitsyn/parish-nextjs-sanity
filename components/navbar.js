@@ -11,7 +11,8 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { myLoader } from "@/utils/all";
 
 export default function Navbar(props) {
-  const leftmenu = [
+
+  const menu = [
     {
       label: "Home",
       href: "/"
@@ -35,17 +36,14 @@ export default function Navbar(props) {
       label: "Services",
       href: "/services"
     },
-  ];
-
-  const rightmenu = [
     {
       label: "Sunday School",
       href: "/sunday-school"
     },
-    {
-      label: "Gallery",
-      href: "/gallery"
-    },
+    // {
+    //   label: "Gallery",
+    //   href: "/gallery"
+    // },
     {
       label: "Donate",
       href: "https://www.paypal.com/paypalme/nickgolitsyn",
@@ -64,16 +62,14 @@ export default function Navbar(props) {
     },
   ];
 
-  const mobilemenu = [...leftmenu, ...rightmenu];
-
   return (
-    <div className="py-5 lg:py-8 bg-amber-500">
-      <nav>
+    <div className="py-5 lg:py-8 bg-navbar">
+      <nav className="flex flex-wrap justify-center md:flex-nowrap md:gap-10">
         <Disclosure>
           {({ open }) => (
             <>
-              <div className="flex flex-wrap justify-between md:flex-nowrap md:gap-10">
-                <div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
+              <div className="flex gap-4 w-fit flex-col">
+                {/* <div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
                   {leftmenu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (
@@ -94,17 +90,20 @@ export default function Navbar(props) {
                       )}
                     </Fragment>
                   ))}
-                </div>
-                <div className="flex w-full items-center justify-between md:w-auto">
+                </div> */}
+                <div className="flex lg:w-full m-auto items-center justify-center gap-10 md:border-4 md:border-double p-5 md:rounded-lg md:border-black md:w-auto">
                   <Link href="/" className="w-28 dark:hidden">
                     {props.logo ? (
-                      <Image
-                        className="rounded-lg"
-                        {...urlForImage(props.logo)}
-                        alt="Logo"
-                        priority={true}
-                        sizes="(max-width: 640px) 100vw, 200px"
-                      />
+                      // <div className="flex">
+                        <Image
+                          className="rounded-lg"
+                          {...urlForImage(props.logo)}
+                          alt="Logo"
+                          priority={true}
+                          sizes="(max-width: 640px) 100vw, 200px"
+                        />
+                        // <p>“Holy Martyr Philothea and Saint Bede the Venerable” Parish</p>
+                      // </div>
                     ) : (
                       <span className="block text-center">
                         Parish
@@ -126,9 +125,11 @@ export default function Navbar(props) {
                       </span>
                     )}
                   </Link>
+                  <p className="hidden max-w-[30rem] text-black lg:text-xl text-sm self-center text-center uppercase font-semibold">Romanian Orthodox Parish “Holy Martyr Philothea and Saint Bede the Venerable”</p>
+                  <p className="text-black max-w-[30rem] text-xs self-center text-center uppercase font-semibold">Parish of “Holy Martyr Philothea and Saint Bede the Venerable”</p>
                   <Disclosure.Button
                     aria-label="Toggle Menu"
-                    className="ml-auto scale-150 rounded-md px-2 py-1 text-gray-500 focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
+                    className="ml-auto scale-150 rounded-md px-2 py-1 text-black focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">
                     <svg
                       className="h-6 w-6 fill-current"
                       xmlns="http://www.w3.org/2000/svg"
@@ -150,8 +151,10 @@ export default function Navbar(props) {
                   </Disclosure.Button>
                 </div>
 
+                {/* <p className="hidden max-w-[10rem] text-sm self-center text-gray-600">“Holy Martyr Philothea and Saint Bede the Venerable” Parish</p> */}
+
                 <div className="order-2 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row">
-                  {rightmenu.map((item, index) => (
+                  {menu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (
                         <DropdownMenu
@@ -160,10 +163,11 @@ export default function Navbar(props) {
                           items={item.children}
                         />
                       ) : (
+                        // Normal navitems
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="px-5 py-2 text-xs lg:text-base font-semibold uppercase text-center text-black hover:text-blue-500 dark:text-gray-400"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           <span> {item.label}</span>
@@ -180,7 +184,7 @@ export default function Navbar(props) {
               </div>
               <Disclosure.Panel>
                 <div className="order-2 -ml-4 mt-4 flex w-full flex-col items-center justify-start md:hidden">
-                  {mobilemenu.map((item, index) => (
+                  {menu.map((item, index) => (
                     <Fragment key={`${item.label}${index}`}>
                       {item.children && item.children.length > 0 ? (
                         <DropdownMenu
@@ -190,10 +194,11 @@ export default function Navbar(props) {
                           mobile={true}
                         />
                       ) : (
+                        // Normal mobile text
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="w-full px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="w-full px-5 py-2 text-xs lg:text-base uppercase font-semibold text-black hover:text-blue-500 dark:text-gray-400"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           {item.label}
@@ -220,10 +225,10 @@ const DropdownMenu = ({ menu, items, mobile }) => {
         <>
           <Menu.Button
             className={cx(
-              "flex items-center gap-x-1 rounded-md px-5 py-2 text-sm font-medium  outline-none transition-all focus:outline-none focus-visible:text-indigo-500 focus-visible:ring-1 dark:focus-visible:bg-gray-800",
+              "flex items-center gap-x-1 rounded-md px-5 py-2 text-m font-semibold text-xs lg:text-base outline-none transition-all focus:outline-none focus-visible:text-indigo-500 focus-visible:ring-1 dark:focus-visible:bg-gray-800 uppercase",
               open
                 ? "text-blue-500 hover:text-blue-500"
-                : " text-gray-600 dark:text-gray-400 ",
+                : " text-black dark:text-gray-400 ",
               mobile ? "w-full px-4 py-2 " : "inline-block px-4 py-2"
             )}>
             <span>{menu.label}</span>
@@ -246,13 +251,14 @@ const DropdownMenu = ({ menu, items, mobile }) => {
                 {items.map((item, index) => (
                   <Menu.Item as="div" key={`${item.title}${index}`}>
                     {({ active }) => (
+                      // mobile drop links
                       <Link
                         href={item?.path ? item.path : "#"}
                         className={cx(
-                          "flex items-center space-x-2 px-5 py-2 text-sm lg:space-x-4",
+                          "flex items-center space-x-2 px-5 py-2 uppercase font-semibold text-xs lg:text-base lg:space-x-4",
                           active
                             ? "text-blue-500"
-                            : "text-gray-700 hover:text-blue-500 focus:text-blue-500 dark:text-gray-300"
+                            : "text-black hover:text-blue-500 focus:text-blue-500 dark:text-gray-300"
                         )}>
                         <span> {item.title}</span>
                       </Link>

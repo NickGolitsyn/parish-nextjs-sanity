@@ -13,12 +13,13 @@ module.exports = {
       colors: {
         gray: colors.neutral,
         // 'golden': '#f4deb3',
-        'golden': '#fbf0da',
+        'golden': '#fff3db',
+        'navbar': '#efbd52',
         'red': '#611414'
       },
       fontFamily: {
         // to change, update font in _document.js
-        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-playfair-display)", ...defaultTheme.fontFamily.sans],
         serif: ["var(--font-lora)", ...defaultTheme.fontFamily.serif],
         stock: [defaultTheme.fontFamily.sans]
       },
