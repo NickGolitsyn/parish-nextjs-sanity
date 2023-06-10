@@ -63,7 +63,7 @@ export default function Navbar(props) {
   ];
 
   return (
-    <div className="py-5 lg:py-8 bg-navbar">
+    <div className="py-5 lg:py-8 bg-navbar border-8 border-solid border-golden">
       <nav className="flex flex-wrap justify-center md:flex-nowrap md:gap-10">
         <Disclosure>
           {({ open }) => (
@@ -91,7 +91,8 @@ export default function Navbar(props) {
                     </Fragment>
                   ))}
                 </div> */}
-                <div className="flex lg:w-full m-auto items-center justify-center gap-10 md:border-4 md:border-double p-5 md:rounded-lg md:border-black md:w-auto">
+                {/* <div className="flex lg:w-full m-auto items-center justify-center gap-10 md:border-4 md:border-double p-5 md:rounded-lg md:border-black md:w-auto"> */}
+                <div className="flex lg:w-full m-auto items-center justify-center gap-10 p-5 md:w-auto border-b-4 border-solid border-golden">
                   <Link href="/" className="w-28 dark:hidden">
                     {props.logo ? (
                       // <div className="flex">
@@ -125,8 +126,8 @@ export default function Navbar(props) {
                       </span>
                     )}
                   </Link>
-                  <p className="hidden max-w-[30rem] text-black lg:text-xl text-sm self-center text-center uppercase font-semibold">Romanian Orthodox Parish “Holy Martyr Philothea and Saint Bede the Venerable”</p>
-                  <p className="text-black max-w-[30rem] text-xs self-center text-center uppercase font-semibold">Parish of “Holy Martyr Philothea and Saint Bede the Venerable”</p>
+                  <p className="hidden max-w-[30rem] text-black text-xl self-center text-center uppercase font-semibold">Romanian Orthodox Parish “Holy Martyr Philothea and Saint Bede the Venerable”</p>
+                  <p className="text-black max-w-[30rem] text-xl self-center text-center uppercase font-semibold">Parish of “Holy Martyr Philothea and Saint Bede the Venerable”</p>
                   <Disclosure.Button
                     aria-label="Toggle Menu"
                     className="ml-auto scale-150 rounded-md px-2 py-1 text-black focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">

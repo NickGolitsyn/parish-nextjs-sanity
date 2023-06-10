@@ -65,7 +65,7 @@ export async function getSettings() {
 
 export async function getAbout() {
   if (client) {
-    return (await client.fetch(contactQuery)) || [];
+    return (await client.fetch(aboutQuery)) || [];
   }
   return [];
 }

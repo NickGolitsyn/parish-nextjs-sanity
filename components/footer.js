@@ -3,7 +3,7 @@ import ThemeSwitch from "@/components/themeSwitch";
 
 export default function Footer(props) {
   return (
-    <Container className="mt-10 border-t border-gray-100 dark:border-gray-800">
+    <Container className="mt-10 border-t dark:border-gray-800 bg-navbar border-8 border-solid border-golden w-full">
       <div className="text-center text-sm">
         Copyright © {props?.copyright}
       </div>

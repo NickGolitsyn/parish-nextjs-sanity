@@ -49,7 +49,7 @@ export default function Contact({ contact }) {
         Contact Us
       </h1>
 
-      <div className="grid my-10 md:grid-cols-2">
+      <div className="grid my-4 md:grid-cols-2">
         <div className="my-10">
           {contact?.contactText && (
             <p className="max-w-sm mt-5">

@@ -10,10 +10,12 @@ export default async function IndexPage() {
   const contact = await getContact();
   return(
     <>
+      <div className=" mt-20"></div>
+      <CoverImage settings={settings.openGraphImage} />
       <WelcomeTitle settings={settings} />
-      <CoverImage settings={settings} />
       <Button url={'/services'} message={'Services'} newPage={false} />
       <WelcomeBody settings={settings} />
+      <CoverImage settings={settings.cross} />
       <Button url={'https://www.paypal.com/paypalme/nickgolitsyn'} message={'Donate'} newPage={true} />
       <Contact contact={contact} />
       {/* <HomePage posts={posts} /> */}
