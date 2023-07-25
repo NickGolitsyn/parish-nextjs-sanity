@@ -63,36 +63,13 @@ export default function Navbar(props) {
   ];
 
   return (
-    <div className="py-5 lg:py-8 bg-navbar border-8 border-solid border-golden">
+    <div className="py-1 md:py-5 lg:py-8 bg-navbar border-8 border-solid border-golden">
       <nav className="flex flex-wrap justify-center md:flex-nowrap md:gap-10">
         <Disclosure>
           {({ open }) => (
             <>
               <div className="flex gap-4 w-fit flex-col">
-                {/* <div className="order-1 hidden w-full flex-col items-center justify-start md:order-none md:flex md:w-auto md:flex-1 md:flex-row md:justify-end">
-                  {leftmenu.map((item, index) => (
-                    <Fragment key={`${item.label}${index}`}>
-                      {item.children && item.children.length > 0 ? (
-                        <DropdownMenu
-                          menu={item}
-                          key={`${item.label}${index}`}
-                          items={item.children}
-                        />
-                      ) : (
-                        <Link
-                          href={item.href}
-                          key={`${item.label}${index}`}
-                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
-                          target={item.external ? "_blank" : ""}
-                          rel={item.external ? "noopener" : ""}>
-                          {item.label}
-                        </Link>
-                      )}
-                    </Fragment>
-                  ))}
-                </div> */}
-                {/* <div className="flex lg:w-full m-auto items-center justify-center gap-10 md:border-4 md:border-double p-5 md:rounded-lg md:border-black md:w-auto"> */}
-                <div className="flex lg:w-full m-auto items-center justify-center gap-10 p-5 md:w-auto border-b-4 border-solid border-golden">
+                <div className="flex w-screen m-auto items-center justify-center gap-10 p-5 md:w-auto md:border-b-4 border-solid border-golden">
                   <Link href="/" className="w-28 dark:hidden">
                     {props.logo ? (
                       // <div className="flex">
@@ -101,7 +78,7 @@ export default function Navbar(props) {
                           {...urlForImage(props.logo)}
                           alt="Logo"
                           priority={true}
-                          sizes="(max-width: 640px) 100vw, 200px"
+                          sizes="(max-width: 1000px) 100vw, 400px"
                         />
                         // <p>“Holy Martyr Philothea and Saint Bede the Venerable” Parish</p>
                       // </div>
@@ -126,8 +103,7 @@ export default function Navbar(props) {
                       </span>
                     )}
                   </Link>
-                  <p className="hidden max-w-[30rem] text-black text-xl self-center text-center uppercase font-semibold">Romanian Orthodox Parish “Holy Martyr Philothea and Saint Bede the Venerable”</p>
-                  <p className="text-black max-w-[30rem] text-xl self-center text-center uppercase font-semibold">Parish of “Holy Martyr Philothea and Saint Bede the Venerable”</p>
+                  <p className="hidden md:block text-[0.5rem] md:text-xl text-black max-w-[30rem] self-center text-center uppercase font-semibold">Parish of “Holy Martyr Philothea and Saint Bede the Venerable”</p>
                   <Disclosure.Button
                     aria-label="Toggle Menu"
                     className="ml-auto scale-150 rounded-md px-2 py-1 text-black focus:text-blue-500 focus:outline-none dark:text-gray-300 md:hidden ">

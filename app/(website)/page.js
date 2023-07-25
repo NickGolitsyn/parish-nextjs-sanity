@@ -4,6 +4,7 @@ import CoverImage from "@/components/coverimage";
 import Button from "@/components/button";
 import WelcomeTitle from "@/components/welcomeTitle";
 import WelcomeBody from "@/components/welcomeBody";
+import ImageComp from "@/components/imagecomp";
 
 export default async function IndexPage() {
   const settings = await getSettings();
@@ -15,7 +16,7 @@ export default async function IndexPage() {
       <WelcomeTitle settings={settings} />
       <Button url={'/services'} message={'Services'} newPage={false} />
       <WelcomeBody settings={settings} />
-      <CoverImage settings={settings.cross} />
+      <ImageComp settings={settings.cross} />
       <Button url={'https://www.paypal.com/paypalme/nickgolitsyn'} message={'Donate'} newPage={true} />
       <Contact contact={contact} />
       {/* <HomePage posts={posts} /> */}
