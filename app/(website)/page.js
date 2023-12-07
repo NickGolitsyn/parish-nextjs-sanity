@@ -11,14 +11,14 @@ export default async function IndexPage() {
   const contact = await getContact();
   return(
     <>
-      <div className=" mt-20"></div>
-      <CoverImage settings={settings.openGraphImage} />
       <WelcomeTitle settings={settings} />
-      <Button url={'/services'} message={'Services'} newPage={false} />
+      <CoverImage settings={settings.openGraphImage} />
+      <WelcomeBody settings={settings} />
+      {/* <Button url={'/services'} message={'Services'} newPage={false} />
       <WelcomeBody settings={settings} />
       <ImageComp settings={settings.cross} />
       <Button url={'https://www.paypal.com/paypalme/nickgolitsyn'} message={'Donate'} newPage={true} />
-      <Contact contact={contact} />
+      <Contact contact={contact} /> */}
       {/* <HomePage posts={posts} /> */}
     </>
   );

@@ -3,7 +3,7 @@ import { urlForImage } from "@/lib/sanity/image";
 
 export default function CoverImage({ settings }) {
   return (
-    <div className="relative z-0 mx-auto aspect-[16/10] max-w-screen-lg overflow-hidden lg:rounded-lg">
+    <div className="relative z-0 mx-auto aspect-[16/9] max-w-4xl overflow-hidden lg:rounded-lg">
         {settings && (
           <Image
             {...urlForImage(settings)}

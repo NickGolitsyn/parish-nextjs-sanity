@@ -13,6 +13,8 @@ module.exports = {
       colors: {
         gray: colors.neutral,
         // 'golden': '#f4deb3',
+        'darker-golden': '#bf9741',
+        'dark-golden': '#d7aa49',
         'golden': '#fff3db',
         'navbar': '#efbd52',
         'red': '#611414'
