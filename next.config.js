@@ -2,9 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    appDir: true
-  },
   images: {
     formats: ["image/avif", "image/webp"],
     dangerouslyAllowSVG: true,
@@ -17,7 +14,11 @@ const nextConfig = {
   eslint: {
     /// Set this to false if you want production builds to abort if there's lint errors
     ignoreDuringBuilds: process.env.VERCEL_ENV === "production"
-  }
+  },
+  i18n: {
+    locales: ['en-GB', 'ro-RO'],
+    defaultLocale: 'en-GB',
+  },
 };
 
 module.exports = nextConfig;

@@ -19,14 +19,7 @@ export default function Navbar(props) {
     },
     {
       label: "About",
-      children: [{
-        title: "About our parish",
-        path: "/about"
-      },
-      {
-        title: "About our saints",
-        path: "/about/saints"
-      }] 
+      href: "/about"
     },
     {
       label: "Contact",

@@ -26,22 +26,23 @@ export default function Service({ services, filtered }) {
 
 
   return (
-    <Container>
+    <div className="flex justify-center">
       {/* <table className="border-separate border-spacing-y-2"> */}
-      <table>
+      <table className="w-full max-w-screen-lg border-[1px] border-black">
         {/* <caption>Testing</caption> */}
         <thead>
           <tr>
-            <th className="p-3">Date</th>
+            <th className="p-3 border-r-[1px] border-black">Date</th>
             <th className="p-3">Description</th>
           </tr>
         </thead>
         <tbody>
         {filteredArray.map((e) =>
           // <tr className="border-y border-white" key={e._key}>
-          <tr key={e._key}>
-            <td className="w-3/12 p-3">
+          <tr key={e._key} className="border-t-[1px] border-black">
+            <td className="w-3/12 p-3 border-r-[1px] border-black">
               <time
+                className="block w-full text-center"
                 dateTime={e.serviceDate}>
                 {format(
                   parseISO(e.serviceDate),
@@ -49,7 +50,7 @@ export default function Service({ services, filtered }) {
                 )}
               </time>  
             </td>
-            <td className="w-9/12 p-3">{e.serviceDescription}</td>
+            <td className="w-9/12 p-3 m-auto">{e.serviceDescription}</td>
           </tr>
         )}
         </tbody>
@@ -78,6 +79,6 @@ export default function Service({ services, filtered }) {
         )}
         </tbody>
       </table> */}
-    </Container>
+    </div>
   );
 }

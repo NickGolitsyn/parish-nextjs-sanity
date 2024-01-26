@@ -14,6 +14,7 @@ export default async function IndexPage() {
       <WelcomeTitle settings={settings} />
       <CoverImage settings={settings.openGraphImage} />
       <WelcomeBody settings={settings} />
+      <ImageComp settings={settings.cross} />
       {/* <Button url={'/services'} message={'Services'} newPage={false} />
       <WelcomeBody settings={settings} />
       <ImageComp settings={settings.cross} />

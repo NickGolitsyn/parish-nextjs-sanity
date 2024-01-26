@@ -10,7 +10,7 @@ html {
   scroll-behavior: smooth !important;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
   background-color: #c9c0ae;
 }
 
@@ -20,7 +20,7 @@ tr:nth-child(odd) {
 
 tbody > tr:hover {
   background-color: #b0a899;
-}
+} */
 
 .footer-grid {
   grid-template-columns: 1fr 5fr 1fr;
